@@ -1,13 +1,12 @@
 package org.mytests.tests;
 
+
 import org.mytests.DataProvider;
 import org.mytests.InitTests;
 import org.mytests.other.User;
 import org.testng.annotations.BeforeMethod;
-
-import java.io.IOException;
+import org.testng.annotations.Test;
 import java.lang.reflect.Method;
-
 import static org.mytests.JdiSite.*;
 
 
@@ -17,13 +16,13 @@ import static org.mytests.JdiSite.*;
 public class LoginTest extends InitTests {
 
     @BeforeMethod
-    public void before(Method method) throws IOException {
+    public void before(Method method)  {
         homePage.isOpened();
     }
-    @org.testng.annotations.Test(dataProviderClass = DataProvider.class,dataProvider="loginTest")
+    @Test(dataProviderClass = DataProvider.class,dataProvider="loginTest")
     public void login(String name, String password,boolean stateData) {
         homePage.refresh();
-        loginForm.login(new User(name,password));
+        loginForm.submit(new User(name,password));
         loginForm.checkLogin(stateData);
     }
 

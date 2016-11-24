@@ -4,15 +4,15 @@ package org.mytests.other;
  * Created by Олег on 16.11.2016.
  */
 public class User {
-    private String name;
+    private String login;
     private String password;
 
     public User(String name, String password) {
-        this.name = name;
+        this.login = name;
         this.password = password;
     }
     public String  getName(){
-        return name;
+        return login;
     }
 
     public String getPassword() {

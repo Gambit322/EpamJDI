@@ -1,28 +1,38 @@
 package org.mytests.tests;
 
-import org.junit.Assert;
-import org.mytests.DataProvider;
-import org.mytests.other.Plate;
+import com.epam.web.matcher.testng.*;
+import org.mytests.InitTests;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static org.mytests.JdiSite.*;
+import static org.mytests.enums.Preconditions.LOGIN;
 
 /**
  * Created by Олег on 21.11.2016.
  */
-public class NavigationTest {
+public class NavigationTest  extends InitTests{
+   @BeforeClass
+   public void setup() {
+      isInState(LOGIN);
+      differentElementPage.isOpened();
+   }
    @Test
-    public void navifationTest() throws InterruptedException {
+    public void navigationTest()  {
        simpleTablePage.isOpened();
-       paginator.left.click();
+       paginator.previous();
        complexTablePage.checkOpened();
-       paginator.right.click();
+       paginator.next();
        simpleTablePage.checkOpened();
-       paginator.first.click();
+       paginator.first();
        contactPage.checkOpened();
-   //  Assert.assertEquals(paginator.left.isHidden(),true);
-       paginator.last.click();
-       Thread.sleep(2000);
+       paginator.previous();
+       //Assert.assertEquals(paginator.first.isDisplayed(),false);
+       Assert.contains( contactPage.getDriver().getCurrentUrl(),"page1.htm");
+       paginator.last();
        metalsColorsPage.checkOpened();
-//     Assert.assertEquals(paginator.right.isHidden(),true);
+       paginator.next();
+      // Assert.assertEquals(paginator.last.isHidden(),true);
+       Assert.contains( metalsColorsPage.getDriver().getCurrentUrl(),"page2.htm");
    }
 }

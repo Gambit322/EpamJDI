@@ -2,8 +2,6 @@ package org.mytests.pageobject;
 
 import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.core.interfaces.common.ITextField;
-import com.epam.jdi.uitests.web.selenium.elements.common.Button;
-import com.epam.jdi.uitests.web.selenium.elements.common.TextField;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Search;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,10 +10,10 @@ import org.openqa.selenium.support.FindBy;
  */
 public class SearchForm extends Search {
     @FindBy(css = ".search-field input")
-    private TextField searchField;
+    private ITextField searchField;
 
     @FindBy(css = ".search .icon-search")
-    private Button searchButton;
+    private IButton searchButton;
 
     @Override
     public void  findAction(String input){

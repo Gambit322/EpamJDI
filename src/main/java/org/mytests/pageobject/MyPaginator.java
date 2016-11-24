@@ -1,5 +1,6 @@
 package org.mytests.pageobject;
 
+import com.epam.jdi.uitests.core.interfaces.common.IButton;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Pagination;
 import org.openqa.selenium.support.FindBy;
@@ -9,12 +10,12 @@ import org.openqa.selenium.support.FindBy;
  */
 public class MyPaginator extends Pagination {
     @FindBy(css = ".uui-pagination li.prev")
-     public Button left;
+     public IButton prev;
     @FindBy(css = ".uui-pagination li.next a")
-    public Button right;
+    public IButton next;
     @FindBy(css = ".uui-pagination li.first a")
-    public Button first;
+    public IButton first;
     @FindBy(css = ".uui-pagination li.last a")
-    public Button last;
+    public IButton last;
 
 }

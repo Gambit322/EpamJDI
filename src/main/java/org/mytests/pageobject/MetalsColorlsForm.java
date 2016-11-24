@@ -8,6 +8,7 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.DropList;
 import com.epam.jdi.uitests.web.selenium.elements.complex.Dropdown;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
+import com.epam.web.matcher.testng.Assert;
 import org.mytests.other.Plate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;

@@ -10,7 +10,7 @@ import org.mytests.enums.Metals;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by Roman_Iovlev on 10/22/2015.
+ * Created by Олег on 21.11.2016.
  */
 public class DifferentElementPage extends WebPage {
     @FindBy(xpath = "(//input[@type='checkbox'])[1]")
