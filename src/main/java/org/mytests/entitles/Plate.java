@@ -1,4 +1,4 @@
-package org.mytests.other;
+package org.mytests.entitles;
 
 /**
  * Created by Олег on 21.11.2016.

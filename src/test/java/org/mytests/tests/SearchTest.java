@@ -1,6 +1,6 @@
 package org.mytests.tests;
 
-import org.mytests.DataProvider;
+import org.mytests.DataProviders;
 import org.mytests.InitTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ public class SearchTest extends InitTests {
         isInState(LOGIN);
     }
 
-    @Test(dataProviderClass = DataProvider.class,dataProvider="searchTest")
+    @Test(dataProviderClass = DataProviders.class,dataProvider="searchTest")
   public void searchTest(String input){
         searchForm.findAction(input);
         supportPage.checkOpened();

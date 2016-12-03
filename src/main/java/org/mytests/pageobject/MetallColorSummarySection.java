@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Олег on 21.11.2016.
  */
-public class SummarySection extends Section{
+public class MetallColorSummarySection extends Section{
     @FindBy(css = "#odds-selector p")
     public RadioButtons odds;
     @FindBy(css = "#even-selector p")

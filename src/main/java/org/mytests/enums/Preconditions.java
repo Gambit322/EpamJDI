@@ -2,12 +2,10 @@ package org.mytests.enums;
 
 import com.epam.commons.linqinterfaces.JAction;
 import com.epam.jdi.uitests.core.preconditions.IPreconditions;
-import com.epam.jdi.uitests.web.selenium.preconditions.WebPreconditions;
-import org.mytests.other.User;
+import org.mytests.entitles.User;
 
 import java.util.function.Supplier;
 
-import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.alwaysMoveToCondition;
 import static org.mytests.JdiSite.loginForm;
 
 /**
@@ -18,6 +16,15 @@ public enum Preconditions implements IPreconditions {
             ()->loginForm.userName.isDisplayed(),
             ()->loginForm.submit(new User("epam","1234"))
 
+    ),
+    LOGOUT(
+            ()-> !loginForm.userName.isDisplayed(),
+            ()-> { if (loginForm.logoutButton.isDisplayed())
+                    loginForm.logoutButton.click();
+                    else {
+                    loginForm.userName.click();
+                    loginForm.logoutButton.click();}
+            }
     );
 
     public Supplier<Boolean> checkAction;

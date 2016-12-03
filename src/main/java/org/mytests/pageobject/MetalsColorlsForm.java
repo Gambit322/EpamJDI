@@ -7,9 +7,7 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.ComboBox;
 import com.epam.jdi.uitests.web.selenium.elements.complex.DropList;
 import com.epam.jdi.uitests.web.selenium.elements.complex.Dropdown;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
-import com.epam.jdi.uitests.web.selenium.elements.pageobjects.annotations.JPage;
-import com.epam.web.matcher.testng.Assert;
-import org.mytests.other.Plate;
+import org.mytests.entitles.Plate;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,7 +15,7 @@ import org.openqa.selenium.support.FindBy;
  * Created by Олег on 20.11.2016.
  */
 public class MetalsColorlsForm extends Form<Plate> {
-    SummarySection summary = new SummarySection();
+    MetallColorSummarySection summary = new MetallColorSummarySection();
     @FindBy(css = "#elements-checklist label")
     CheckList elements;
     public Dropdown colors = new Dropdown(By.cssSelector(".colors .filter-option"),

@@ -1,9 +1,9 @@
 package org.mytests.pages;
 
-import com.epam.jdi.uitests.web.selenium.elements.common.Button;
+import com.epam.jdi.uitests.core.interfaces.common.IButton;
+import com.epam.jdi.uitests.core.interfaces.common.ITextField;
+import com.epam.jdi.uitests.core.interfaces.complex.IRadioButtons;
 import com.epam.jdi.uitests.web.selenium.elements.common.CheckBox;
-import com.epam.jdi.uitests.web.selenium.elements.common.TextField;
-import com.epam.jdi.uitests.web.selenium.elements.complex.RadioButtons;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import org.junit.Assert;
 import org.mytests.enums.Metals;
@@ -23,15 +23,15 @@ public class DifferentElementPage extends WebPage {
     public CheckBox wind;
 
    @FindBy(css = ".checkbox-row .label-radio")
-   public RadioButtons<Metals> metal;
+   public IRadioButtons<Metals> metal;
 
     @FindBy (css = "input.uui-button")
-    public Button button;
+    public IButton button;
     @FindBy (css = "button[name=\"Default Button\"]")
-    public Button defaultButton;
+    public IButton defaultButton;
 
     @FindBy (css = "div.info-panel-body.info-panel-body-log")
-    public TextField logBox;
+    public ITextField logBox;
 
     public void checkAllCheckBox(boolean waterState,boolean earthState,boolean fireState,boolean windState){
         checkBoxSetState(water,waterState);

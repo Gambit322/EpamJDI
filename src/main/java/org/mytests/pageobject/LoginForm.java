@@ -10,7 +10,7 @@ import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.common.TextField;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import org.junit.Assert;
-import org.mytests.other.User;
+import org.mytests.entitles.User;
 import org.openqa.selenium.support.FindBy;
 
 /**

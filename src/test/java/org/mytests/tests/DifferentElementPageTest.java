@@ -1,6 +1,6 @@
 package org.mytests.tests;
 
-import org.mytests.DataProvider;
+import org.mytests.DataProviders;
 import org.mytests.InitTests;
 import org.mytests.enums.Metals;
 import org.testng.annotations.*;
@@ -18,7 +18,7 @@ public class DifferentElementPageTest extends InitTests {
         isInState(LOGIN);
         differentElementPage.isOpened();
     }
-    @Test(dataProviderClass = DataProvider.class, dataProvider = "checkBoxTest")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "checkBoxTest")
     public void checkBoxTest(boolean waterState, boolean earthState, boolean fireState, boolean windState) {
         differentElementPage.checkAllCheckBox(waterState, earthState, fireState, windState);
     }
@@ -26,18 +26,15 @@ public class DifferentElementPageTest extends InitTests {
     public void radioButtonTest()  {
           //работает только в хроме, в фф не работает блок с логами
          differentElementPage.metal.select(Metals.GOLD);
-         //Assert.assertTrue(differentElementPage.metal.isSelected(Metals.GOLD));
          Assert.assertContains(differentElementPage.logBox.getText(),"value changed to Gold");
          differentElementPage.metal.select(Metals.SILVER);
-         //Assert.assertTrue(differentElementPage.metal.isSelected(Metals.SILVER));
          Assert.assertContains(differentElementPage.logBox.getText(),"value changed to Silver");
          differentElementPage.metal.select(Metals.BRONZE);
          Assert.assertContains(differentElementPage.logBox.getText(),"value changed to Bronze");
-         //Assert.assertTrue(differentElementPage.metal.isSelected(Metals.BRONZE));
          differentElementPage.metal.select(Metals.SELEN);
          Assert.assertContains(differentElementPage.logBox.getText(),"value changed to Selen");
-         //Assert.assertTrue(differentElementPage.metal.isSelected(Metals.SELEN));
-     }
+
+    }
     @Test
     public void buttonTest(){
         //работает только в хроме, в фф не работает блок с логами
