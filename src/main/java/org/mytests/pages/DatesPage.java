@@ -8,12 +8,14 @@ import com.epam.jdi.uitests.web.robot.RFileInput;
 import com.epam.jdi.uitests.web.selenium.elements.common.DatePicker;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import org.mytests.pageobject.ContactForm;
+import org.mytests.pageobject.TimePicker;
 import org.openqa.selenium.support.FindBy;
 
 /**
  * Created by Олег on 21.11.2016.
  */
 public class DatesPage extends WebPage {
+    public TimePicker timePicker;
     @FindBy(css = "#datepicker input")
     public DatePicker datepicker;
     @FindBy(css = "[data-provides=fileinput]")
@@ -32,5 +34,7 @@ public class DatesPage extends WebPage {
     public ITextField range1Result;
     @FindBy(css = ".results li.date-res")
     public ITextField periodResult;
+
+
 
 }

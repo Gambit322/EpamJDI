@@ -5,10 +5,8 @@ import com.epam.web.matcher.testng.Assert;
 import org.mytests.*;
 import org.mytests.DataProviders;
 import org.testng.annotations.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static com.epam.jdi.uitests.core.preconditions.PreconditionsState.isInState;
 import static org.mytests.JdiSite.tableWithPages;
 import static org.mytests.enums.Preconditions.LOGIN;
@@ -17,7 +15,7 @@ import static org.mytests.enums.Preconditions.LOGIN;
  * Created by Олег on 29.11.2016.
  */
 public class TableWithPagesTest extends InitTests {
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         isInState(LOGIN);
         tableWithPages.isOpened();

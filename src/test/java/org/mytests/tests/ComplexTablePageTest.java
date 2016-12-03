@@ -7,7 +7,7 @@ import org.mytests.InitTests;
 import org.mytests.entitles.Cell;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.mytests.enums.*;
 
 
@@ -19,7 +19,7 @@ import static org.mytests.enums.Preconditions.LOGIN;
  * Created by Олег on 28.11.2016.
  */
 public class ComplexTablePageTest extends InitTests {
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         isInState(LOGIN);
         complexTablePage.isOpened();

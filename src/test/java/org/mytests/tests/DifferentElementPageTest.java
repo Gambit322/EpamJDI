@@ -13,7 +13,7 @@ import static org.mytests.enums.Preconditions.LOGIN;
  * Created by Олег on 16.11.2016.
  */
 public class DifferentElementPageTest extends InitTests {
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         isInState(LOGIN);
         differentElementPage.isOpened();

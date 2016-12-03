@@ -127,4 +127,22 @@ public class DataProviders {
                 {"drg","dfgdfg"}
         };
     }
+    @DataProvider(name = "timePickerInputTest")
+    public static Object[][] timePickerInputTest() {
+        return new Object[][]{
+                {"11", "34", "AM", "11:34 AM"},
+                {"4", "59", "AM", "4:59 AM"},
+                {"13", "60", "PM", "12:59 PM"},
+                {"0", "-1", "PM", "1:01 PM"}
+        };
+    }
+    @DataProvider(name = "timePickerButtonTest")
+    public static Object[][] timePickerButtonTest() {
+        return new Object[][]{
+                { 1, 0, "AM"},
+                { 7, 15, "PM"},
+                { 6, 30, "PM"},
+                {12, 45, "AM"}
+        };
+    }
 }

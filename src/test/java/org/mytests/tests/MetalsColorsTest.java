@@ -13,7 +13,7 @@ import org.testng.annotations.*;
  * Created by Олег on 20.11.2016.
  */
 public class MetalsColorsTest extends InitTests {
-    @BeforeClass
+    @BeforeMethod
     public void setup(){
         isInState(LOGIN);
         metalsColorsPage.isOpened();
